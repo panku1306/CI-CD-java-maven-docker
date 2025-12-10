@@ -11,12 +11,16 @@ node {
     
     stage('Clone Repo') { // for display purposes
       // Get some code from a GitHub repository
-         git 'https://github.com/vikas4cloud/CI-CD-java-maven-docker.git'
+         //git 'https://github.com/vikas4cloud/CI-CD-java-maven-docker.git'
+		 git url: 'https://github.com/panku1306/CI-CD-java-maven-docker.git', branch: 'main' // Or 'main'
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
       // **       in the global configuration.           
       mvnHome = tool 'maven-3.5.2'
-    }    
+    }  
+
+	
+	
   
     stage('Build Project') {
       // build project via maven
